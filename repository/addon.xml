@@ -20,6 +20,106 @@
     <platform>all</platform>
   </extension>
 </addon>
+<addon id="plugin.video.movixws"
+	   name="Movix Live"
+	   version="1.5.4"
+	   provider-name="Movix">
+  <requires>
+    <import addon="xbmc.python" version="2.1.0"/>
+	<import addon="script.module.requests"/>
+	<import addon="script.module.resolveurl" version="5.0.00"/>
+  </requires>
+  <extension point="xbmc.python.pluginsource"
+            library="default.py">
+        <provides>video</provides>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <summary lang="he">Movix Live</summary>
+    <description lang="he">Movix Live</description>
+    <platform>all</platform>
+  </extension>
+</addon>
+<addon id="plugin.video.live.streamspro"
+       name="LiveStreamsPro"
+       version="2.9.4"
+       provider-name="Shani">
+  <requires>
+    <import addon="xbmc.python" version="2.1.0"/>
+    <import addon="script.module.beautifulsoup" version="3.2.1"/>
+    <import addon="script.module.simple.downloader" version="0.9.4"/>
+    <import addon="script.module.requests" />
+    <import addon="script.module.httplib2" />
+    <import addon="script.module.liveresolver" version="0.1.24" optional="true"/>
+    <import addon="script.module.youtube.dl" optional="true"/>
+    <import addon="plugin.video.youtube" optional="true" />
+    <import addon="script.module.dateutil" optional="true" />
+    <import addon="script.module.resolveurl" optional="true"/>
+    <import addon="script.module.urlresolver" optional="true"/>
+    <import addon="script.module.inputstreamhelper" optional="true"/>
+    <import addon="script.module.simplejson" />    
+    <import addon="script.module.livestreamer" optional="true"/>
+    <import addon="script.module.slproxy" optional="true"/>
+    <import addon="script.module.pyamf" optional="true"/>
+  </requires>
+  <extension point="xbmc.python.pluginsource" library="default.py">
+    <provides>video</provides>
+  </extension>
+
+
+  <extension point="xbmc.addon.metadata">
+    <summary>livestreamspro- shamelessly forked from livestreams but added many things</summary>
+    <description>
+        In addition to what livestreams allowed you to do, you can now,
+        1. call regex in regex,
+        2. multiple regex in page, regex in session, also htmlunescape responses
+        3. create session from one regex and pass onto next in line
+        4. save sessions to a file and open again later
+        5. write python code in .py file, put in the profile directory and then call from your regex.
+        6. use epoctime, guid and unpack as functions already defined.
+        7. Use it to post values to the pages to get the proper responses
+        8. support many headers, like origin, X-Requested-With
+        9. you can now append cookies in response and then read in regex using includeheaders
+        10. You can now link to another web url via your xml using externallink
+        11. support for google captcha, now you can show and then post the text
+        
+    </description>
+    <platform>all</platform>
+  </extension>
+</addon>
+<addon id="plugin.video.playlistLoader" name="Playlist Loader" version="1.3.0" provider-name="Avigdor and Nux007">
+  <requires>
+    <import addon="xbmc.python" version="2.1.0"/>
+    <import addon="script.module.requests" version="2.9.1"/>
+  </requires>
+  <extension point="xbmc.python.pluginsource" library="default.py">
+        <provides>video</provides>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en">Playlist Loader</summary>
+    <summary lang="he">Playlist Loader</summary>
+    <description lang="en">Playlist Loader</description>
+    <description lang="he">Playlist Loader</description>
+    <platform>all</platform>
+	<news>
+1.3.0
+- Added default icons.
+- Added transparency to existing icons for better themes integration.
+- Added virtual directories feature allowing a better categorization of m3u lists.
+- Refresh favourites list when moving an item.
+- Ability to move playlists root and directories sides.
+- Refresh playlists and directories when moving an item.
+- Disabled TvDb and MovieDb for now ( waiting for improvements )
+
+1.2.1
+- Taking ownership of the addon, see : https://github.com/avigdork/xbmc-avigdork/pull/8#issuecomment-416955692
+- Fixed regex => grouping issue when tvg-logo was empty.
+- Added icon image also when items are grouped.
+- Regex fix for title containing comas.
+- Added TheTvDb scan for each lists in contextual menu ( beta ).
+
+	</news>
+  </extension>
+</addon>
 	<addon id="plugin.video.wallaNew.video" name="וואלה" version="2.3.2" provider-name="sbentin, shlomico, nil">
 		<requires>
 			<import addon="xbmc.python" version="2.1.0"/>
@@ -876,38 +976,6 @@ v5.2.14 (2017-01-23)
     <platform>all</platform>
 
   </extension>
-</addon>	
-<addon
-    id="skin.eminence.2.mod"
-    version="999.3.0.4"
-    name="Diggz Eminence"
-    provider-name="Diggz">
-    <requires>
-        <import addon="xbmc.gui" version="5.14.0"/>
-        <import addon="script.skinshortcuts" version="1.0.13"/>
-        <import addon="script.skin.helper.service" version="1.1.23"/>
-		<import addon="script.skin.helper.widgets" version="1.0.35"/>
-		<import addon="script.skin.helper.colorpicker" version="1.0.12"/>
-        <import addon="script.extendedinfo" version="5.0.0"/>
-        <import addon="script.image.resource.select" version="0.0.5"/>
-        <import addon="plugin.program.autocompletion" version="1.0.1"/>
-        <import addon="resource.images.weatherfanart.multi" version="0.0.6"/>		
-    </requires>
-    <extension point="xbmc.gui.skin" effectslowdown="1.00" debugging="false">
-        <res width="1920" height="1080" aspect="16:9" default="true" folder="16x9" />
-    </extension>
-    <extension point="xbmc.addon.metadata">
-        <platform>all</platform>
-        <summary lang="en">Diggz Eminence</summary>
-        <description lang="en">Eminence is a skin that aims to be clean, clear, simple and modern.</description>
-        <description lang="fr">Eminence est un thème qui vise à être clair, simple et moderne.</description>
-		<assets>
-		 	<icon>icon.png</icon>
- 			<fanart>fanart.jpg</fanart>
-		</assets>	
-		<news> 
-		</news>
-	</extension>
 </addon>
 	
 </addons>
